@@ -1,12 +1,15 @@
-/* Portrait App CSS */
-
+/*
+Picture App 2
+by: Jacob Kilmer
+remlik Apps 2019
+*/
 
 html {
-  color: #fff;
+  color: #000;
   margin: 0;
-  min-width: 1600px;
-  background-color: #08ab4e;
-  /* red   background-color: #c71b2b;*/
+  min-width: 900px;
+  background-color: #fff;
+  overflow: hidden;
 }
 body {
   margin: 0;
@@ -14,12 +17,47 @@ body {
   height: 100%;
   width: 100%;
 }
+@keyframes backgroundAnimate {
+  0% {
+    background-color: #0062FF;
+  }
+  25% {
+    background-color: #ccff00;
+  }
+  50% {
+    background-color: #b92e34 ;
+  }
+  75% {
+    background-color: #FFFF00;
+  }
+  100% {
+    background-color: #0062FF;
+  }
+}
+@-webkit-keyframes backgroundAnimate {
+  0% {
+    background-color: #0062FF;
+  }
+  25% {
+    background-color: #ccff00;
+  }
+  50% {
+    background-color: #b92e34 ;
+  }
+  75% {
+    background-color: #FFFF00;
+  }
+  100% {
+    background-color: #0062FF;
+  }
+}
 #wrapper {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #08ab4e;
-  /* red  background-color: #c71b2b;*/
+  animation-name: backgroundAnimate;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
 }
 .wrapper-cont-inner {
   position: relative;
@@ -28,68 +66,75 @@ body {
   display: table;
   text-align: center;
 }
+#picWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 #picCont {
   position: relative;
   height: 100%;
   width: 100%;
-  display: table;
-  padding: 0;
+  padding: 40px;
+  box-sizing: border-box;
+}
+#theContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 #picContInner {
-  display: table-cell;
-  vertical-align: middle;
+  position: relative;
+  height: calc(100% - 80px - 45px - 60px);
+  width: calc(100% - 60px);
+  border-top: 30px solid #000;
+  border-bottom: 30px solid #000;
+  border-left: 30px solid #252020;
+  border-right: 30px solid #252020;
+  transition: 1s;
+  -webkit-transition: 1s ease;
+  box-shadow: 9px 9px 30px #000;
+}
+.choosen #picContInner {
+  transition-delay: 1s;
+  height: calc(100% - 60px);
 }
 #picBoxOuter {
-  width: 1200px;
-  height: 500px;
   margin: 0px auto;
-  background-position: center 0;
-  background-repeat: no-repeat;
-  background-image: url(img/portrait_app_img6.jpg);
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 #picBox {
-  width: 500px;
-  height: 269px;
   margin: 0px auto;
   background-color: #000;
   position: relative;
-  top: 37px;
-  right: 7px;
-}
-#picBox:before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-image: url(img/tree.png);
-  width: 300px;
-  height: 500px;
-  top: 0px;
-  left: -350px;
-}
-#picBox:after {
-  content: '';
-  display: block;
-  position: absolute;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  background-image: url(img/fire-place.png);
-  width: 534px;
-  height: 500px;
-  top: 0px;
-  right: -600px;
+  overflow: hidden;
+  height: 100%;
+  transition: .5s;
+  -webkit-transition: .5s;
 }
 .picBoxInner {
-  display: none;
+  overflow: hidden;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
   left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0px auto;
+  opacity: 0;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  transition: opacity 2s ease;
+  -webkit-transition: opacity 2s ease;
 }
-#picBoxInner1 {display: block;}
-.picBoxInner img {display: block; height: 100%; margin: 0px auto;}
+.picBoxInner {
+  background-size: cover;
+}
+
 #portrait-number {
   display: table-cell;
   vertical-align: middle;
@@ -101,46 +146,106 @@ body {
   overflow: hidden;
   text-align: center;
 }
-#portrait-number select {display: inline-block; margin: 0 15px 0 0;}
-#portrait-number input {display: inline-block;}
-#portrait-form {
-  position: relative;
-  display: table-cell;
-  vertical-align: middle;
+#albumForm {
   text-align: center;
+}
+#menuContainer {
+  transition: 1s ease;
+  -webkit-transition: 1s ease;
+  position: relative;
   bottom: 0;
-  z-index: 7;
-  max-width: 800px;
-  left: 0;
-  margin: 0 auto;
 }
-.start-over {
+.choosen #menuContainer {
+  transition-delay: .5s;
+  bottom: -200px;
+}
+#albumList {
   display: block;
-  width: auto;
-  margin: 0px auto;
-  transition: .5s;
-  -webkit-transition: .5s;
-  font-size: 18px;
-  text-align: center;
-  color: #000;
-  text-decoration: none;
-  padding: 0;
-  font-weight: bold;
-  position: relative;
-  bottom: 60px;
+  margin: 30px auto;
 }
-
-
-
-@media screen and (min-width: 1600px) {
-  /*#picCont:after {
-    content: '';
-    display: block;
-    position: absolute;
-    background-color: red;
-    width: 400%;
-    height: 100%;
-    top: -50px;
-    right: -400%;
-  }*/
+#menuBack {
+  background-color: #2360ef;
+  color: #fff;
+  border-radius: 9px;
+  padding: 10px 20px;
+  text-align: center;
+  box-shadow: 0 0 10px #1b4371 inset;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 55px;
+  right: -200px;
+  display: block;
+  bottom: 45px;
+  transition: .3s;
+  -webkit-transition: .3s;
+  transition: background-color .3s, color .3s, right 1s ease;
+  outline: 0;
+  -webkit-transition: background-color .3s, color .3s, right 1s ease;
+  border: 0;
+  font-weight: bold;
+}
+#menuBack:hover {
+  background-color: #fff;
+  color: #2360ef;
+  cursor: pointer;
+  box-shadow: none;
+}
+.choosen #menuBack {
+  transition-delay: 0s, 0s, 2s;
+  right: -25px;
+}
+#image_expander {
+  background-color: #2360ef;
+  color: #fff;
+  border-radius: 9px;
+  padding: 10px 20px;
+  text-align: center;
+  box-shadow: 0 0 10px #1b4371 inset;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 55px;
+  right: -200px;
+  display: block;
+  bottom: 170px;
+  transition: .3s;
+  -webkit-transition: .3s;
+  transition: background-color .3s, color .3s, right 1s ease;
+  outline: 0;
+  -webkit-transition: background-color .3s, color .3s, right 1s ease;
+  border: 0;
+  font-weight: bold;
+}
+#image_expander:hover {
+  background-color: #fff;
+  cursor: pointer;
+  color: #2360ef;
+  box-shadow: none;
+}
+.menu_out #image_expander {
+  transition-delay: 0s, 0s, 2s;
+  right: -25px;
+}
+#image_changer {
+  display: block;
+  margin: 0px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #1b4371 inset;
+  padding: 10px 30px;
+  font-weight: bold;
+  background-color: #2360ef;
+  color: #fff;
+  text-transform: uppercase;
+  border: 0;
+  font-size: 18px;
+  transition: background-color .3s, color .3s;
+  outline: 0;
+  -webkit-transition: background-color .3s, color .3s;
+  position: relative;
+  bottom: 0;
+}
+#image_changer:hover {
+  background-color: #fff;
+  color: #2360ef;
+  cursor: pointer;
+  box-shadow: none;
 }

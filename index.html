@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Picture App 2</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="wrapper" class="wrapper-cont">
+      <div id="picWrap">
+        <div id="picCont">
+          <div id="theContainer">
+            <div id="picContInner">
+              <div id="picBoxOuter">
+                <div id="picBox">
+                </div>
+              </div>
+            </div>
+            <button id="menuBack">Change Album</button>
+            <button id="image_expander">Expand</button>
+            <div id="menuContainer">
+              <select id="albumList"></select>
+              <button id="image_changer">submit picture album</button>
+            </div>
+          </div><!-- theContainer -->
+        </div><!-- picCont -->
+      </div><!-- picWrap -->
+    </div><!-- wrapper-cont -->
+    <script type="text/javascript">
+      var albumNames = [
+         // ['albumName', 'pictureTotal'],
+         ['cookingPics', '4'],
+         ['coding_with_bunny', '4']
+        // last album entry has no comma at the end
+      ];
+    </script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
